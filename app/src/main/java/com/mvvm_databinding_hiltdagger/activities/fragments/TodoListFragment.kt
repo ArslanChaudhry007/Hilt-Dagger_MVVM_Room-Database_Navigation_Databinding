@@ -20,7 +20,7 @@ import com.mvvm_databinding_hiltdagger.model.Todo
 
 
 @AndroidEntryPoint
-class TodoListFragment : Fragment(R.layout.fragment_todo_list), View.OnClickListener, GenericCallBackAdapter {
+class TodoListFragment : Fragment(R.layout.fragment_todo_list), View.OnClickListener {
 
     private var _binding: FragmentTodoListBinding? = null
     private val binding get() = _binding!!
@@ -87,11 +87,5 @@ class TodoListFragment : Fragment(R.layout.fragment_todo_list), View.OnClickList
             }
         }
     }
-
-    override fun <T> getClickedObject(clickedObj: T) {
-        clickedObj as Todo
-        viewModel.deleteTodo(clickedObj)
-    }
-
 
 }
